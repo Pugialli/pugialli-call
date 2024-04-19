@@ -1,6 +1,6 @@
 import { NextApiRequest, NextApiResponse, NextPageContext } from 'next'
 import { Adapter } from 'next-auth/adapters'
-import { parseCookies, destroyCookie } from 'nookies'
+import { destroyCookie, parseCookies } from 'nookies'
 import { prisma } from '../prisma'
 
 export function PrismaAdapter(
@@ -26,7 +26,7 @@ export function PrismaAdapter(
         },
       })
 
-      destroyCookie({ res }, '@ignitecall:userId', {
+      destroyCookie({ res }, '@ignitecall:userID', {
         path: '/',
       })
 
